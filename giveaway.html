@@ -2,45 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Diamond Giveaway - Free Fire Gaming Hub</title>
   <style>
-    body {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      width: 100%;
       background: black;
-      color: white;
-      text-align: center;
       font-family: Arial;
-      padding: 50px;
+      overflow: hidden;
     }
     .box {
-      background: linear-gradient(45deg, #FFD700, #FF8C00);
+      background: linear-gradient(135deg, #FF0050, #00F2EA); /* TikTok colors */
       color: black;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 20px gold;
+      width: 100%;
+      height: 100%; /* POORI SCREEN */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      animation: glow 2s infinite alternate;
     }
-    h1 { font-size: 28px; }
+    @keyframes glow {
+      from { box-shadow: 0 0 30px rgba(255,0,80,0.7); }
+      to { box-shadow: 0 0 60px rgba(0,242,234,0.9); }
+    }
+    h1 { font-size: 10vw; margin-bottom: 20px; font-weight: 900; }
+    p { font-size: 5vw; margin: 15px 0; line-height: 1.5; font-weight: bold; }
     .btn {
-      display: inline-block;
       background: black;
-      color: gold;
-      padding: 15px 30px;
-      border-radius: 10px;
+      color: white;
+      padding: 4vw 8vw;
+      border-radius: 15px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 20px;
+      margin: 20px 5px;
+      font-size: 5vw;
+      transition: 0.3s;
+      border: none;
+    }
+    .btn:hover { transform: scale(1.1); }
+    input {
+      padding: 4vw;
+      width: 90%;
+      max-width: 500px;
+      border: none;
+      border-radius: 12px;
+      margin: 15px 0;
+      font-size: 5vw;
+      text-align: center;
+    }
+    .submit-btn {
+      background: black;
+      color: #00F2EA;
+      border: 3px solid #00F2EA;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div class="box">
-    <h1>🎁 Free Diamond Giveaway</h1>
-    <p>Giveaway mein hissa lene ke liye neeche wala step follow karo:</p>
-    <p>1. YouTube Channel Subscribe karo<br>
-       2. Comment mein UID likho<br>
-       3. Video ko Like karo</p>
-    <a href="https://youtube.com" class="btn">Subscribe Now</a>
+    <h1>🎁 Free Diamond Giveaway 🎁</h1>
+    <p>2 Step Follow karo:</p>
+    <p>1. TikTok Follow karo<br>2. UID Submit karo</p>
+    
+        <a href="https://www.tiktok.com/@freefiregaminghubpk" class="btn">Follow on TikTok</a>
+    
+    <form>
+      <input type="text" placeholder="Apni Free Fire UID" required>
+      <br>
+      <button type="submit" class="btn submit-btn">UID Submit</button>
+    </form>
   </div>
 </body>
 </html>
