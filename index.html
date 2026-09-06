@@ -38,7 +38,7 @@
 <p style="font-size: 14px; margin: 10px 0; color: #ff3300; font-weight: bold;">Timing: 10:00 AM</p>
     <a href="https://tally.so/r/WOW87j" class="btn" target="_blank">Register Now</a>
   </section>
-
+<div id="countdown" style="font-size: 18px; font-weight: bold; color: #00ff00; margin: 15px 0;"></div>
   <section class="content">
     <h2>Latest FF News</h2>
     <div class="card">
@@ -140,6 +140,31 @@
 <footer style="text-align: center; padding: 20px; background: #000;">
     <p>© 2026 Free Fire Gaming Hub | Follow us on YouTube & TikTok</p>
 </footer>
+  <script>
+function updateCountdown() {
+  const now = new Date();
+  let tournamentTime = new Date();
+  tournamentTime.setHours(10, 0, 0, 0);
+
+  if (now > tournamentTime) {
+    tournamentTime.setDate(tournamentTime.getDate() + 1);
+  }
+
+  const distance = tournamentTime - now;
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = 
+    "Tournament starts in: " + hours + "h " + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "Tournament is LIVE!";
+  }
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+  </script>
   </body>
 
 </html>
